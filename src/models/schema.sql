@@ -46,3 +46,7 @@ BEGIN
     );
 END
 GO
+
+ALTER TABLE Books
+ADD CONSTRAINT UQ_Books_Title_Author UNIQUE (title, author);
+GO

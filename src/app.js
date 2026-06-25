@@ -1,5 +1,6 @@
 const express = require('express');
 const { connectDB } = require('./config/database');
+const cors = require('cors');
 require('dotenv').config();
 
 const memberRoutes = require('./routes/memberRoutes');
@@ -7,6 +8,12 @@ const bookRoutes = require('./routes/bookRoutes');
 const loanRoutes = require('./routes/loanRoutes');
 
 const app = express();
+
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.use(express.json());
 

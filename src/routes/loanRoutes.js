@@ -5,12 +5,12 @@ const {
   createLoan,
   getAllLoans,
   getLoanById,
-  updateLoan,
+  returnLoan,
 } = require('../controllers/loanController');
 
 router.post('/', createLoan);
 router.get('/', getAllLoans);
 router.get('/:id', getLoanById);
-router.put('/:id', updateLoan);
+router.put('/:id', returnLoan);
 
 module.exports = router;
